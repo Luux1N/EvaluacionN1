@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Agregar Contacto
+{% endblock %}
+
+{% block content %}
+  <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow border border-gray-300">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Nuevo Contacto</h1>
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+      <div>
+        <label for="id_nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+        <input type="text" name="nombre" id="id_nombre"
+               value="{{ form.nombre.value|default_if_none:'' }}"
+               class="block w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        {% if form.nombre.errors %}
+          <div class="mt-1 text-sm text-red-600">{{ form.nombre.errors }}</div>
+        {% endif %}
+      </div>
+      <div>
+        <label for="id_telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+        <input type="text" name="telefono" id="id_telefono"
+               value="{{ form.telefono.value|default_if_none:'' }}"
+               class="block w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        {% if form.telefono.errors %}
+          <div class="mt-1 text-sm text-red-600">{{ form.telefono.errors }}</div>
+        {% endif %}
+      </div>
+      <div>
+        <label for="id_correo" class="block text-sm font-medium text-gray-700 mb-1">Correo</label>
+        <input type="email" name="correo" id="id_correo"
+               value="{{ form.correo.value|default_if_none:'' }}"
+               class="block w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        {% if form.correo.errors %}
+          <div class="mt-1 text-sm text-red-600">{{ form.correo.errors }}</div>
+        {% endif %}
+      </div>
+      <div>
+        <label for="id_direccion" class="block text-sm font-medium text-gray-700 mb-1">Dirección</label>
+        <input type="text" name="direccion" id="id_direccion"
+               value="{{ form.direccion.value|default_if_none:'' }}"
+               class="block w-full border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        {% if form.direccion.errors %}
+          <div class="mt-1 text-sm text-red-600">{{ form.direccion.errors }}</div>
+        {% endif %}
+      </div>
+      <div class="flex justify-end gap-3 pt-4 border-t border-gray-200">
+        <a href="{% url 'lista_contactos' %}" class="px-6 py-2 border border-gray-300 text-sm rounded-md text-gray-700 bg-white hover:bg-gray-50">Cancelar</a>
+        <button type="submit" class="px-6 py-2 text-sm rounded-md text-white bg-green-600 hover:bg-green-700">Guardar</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
