@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import psycopg2
+
 from dotenv import load_dotenv
 import os
+import psycopg2
 
 from pathlib import Path
 load_dotenv()
@@ -89,8 +90,6 @@ DATABASES = {
     "PASSWORD": os.getenv("password"),
     "HOST": os.getenv("host"),
     "PORT": os.getenv("port")
-    
-    
   }
 }
 
