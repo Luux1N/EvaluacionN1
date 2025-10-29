@@ -31,15 +31,14 @@ SECRET_KEY = 'django-insecure-3d^#(aofe@sopjd%uj5sclvx&)j#e7_nwdft7!q41l#p0fq2bf
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    ".onrender.com"
+    ".onrender.com",
+    "127.0.0.1"
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_interface',
-    "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
