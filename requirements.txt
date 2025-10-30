@@ -2,7 +2,7 @@ Django
 django-environ
 whitenoise
 gunicorn
-psycopg[binary]
+psycopg[binary,pool]
 psycopg2-binary
 asgiref
 python-dotenv
