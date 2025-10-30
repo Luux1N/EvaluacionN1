@@ -5,10 +5,10 @@ admin.site.index_title = "Panel de Administración de Contactos"
 
 @admin.register(Contacto)
 class ContactoAdmin(admin.ModelAdmin):
-    
-    list_display = ("nombre", "correo", "telefono")
-    
-    search_fields = ("nombre", "correo", "telefono")
+
+    list_display = ("nombre", "correo", "telefono", "direccion")
+
+    search_fields = ("nombre", "correo", "telefono", "direccion")    
    
     list_per_page = 25
 #
